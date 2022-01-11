@@ -1,0 +1,1 @@
+function evaluateIndividualFitness()  % ?ánh giá ?? thích nghi c?a t?ng cá th?  fprintf('Evaluate Individual Fitness\n')  

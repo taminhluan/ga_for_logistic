@@ -1,0 +1,17 @@
+Public Function GetDistance(start As String, dest As String, key As String)
+
+    Dim firstVal As String, secondVal As String, lastVal As String
+
+    firstVal = "https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrix?origins="
+    secondVal = "&destinations="
+    lastVal = "&travelMode=driving&o=xml&key=" & key & "&distanceUnit=mi"
+
+    Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP")
+
+    Url = firstVal & start & secondVal & dest & lastVal
+    objHTTP.Open "GET", Url, False
+    objHTTP.SetRequestHeader "User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)"
+    objHTTP.Send ("")
+    GetDistance = Round(Round(WorksheetFunction.FilterXML(objHTTP.ResponseText, "//TravelDistance"), 3) * 1.609, 0)
+
+End Function
