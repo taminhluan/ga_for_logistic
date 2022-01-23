@@ -1,5 +1,3 @@
 function finish()
-  % K?t thúc
-  % % K?t thúc
+  % káº¿t thÃºc
   fprintf('Finished\n')
-  
