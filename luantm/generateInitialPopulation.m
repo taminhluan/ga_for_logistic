@@ -1,4 +1,8 @@
 function generateInitialPopulation()
+  global need_print_out;
+  
   % Kh?i t?o qu?n th?
-  fprintf('Generate initial population\n')
+  if need_print_out == 1
+    fprintf('Generate initial population\n')
+  end
   
